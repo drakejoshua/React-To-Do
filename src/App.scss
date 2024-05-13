@@ -1,0 +1,179 @@
+// importing base styles
+@import "./base_styles";
+
+
+body {
+    background-color: rgb(8, 105, 231);
+    width: 100%;
+    height: 100vh;
+}
+
+
+#root {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: $backgroundBlue;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.app-ctn {
+    width: 25%;
+    height: 80%;
+    margin: auto;
+    background-color: $primaryWhite;
+    padding: 25px 30px;
+    border-radius: 20px;
+    box-shadow: 8px 8px 5px $shadowBlack;
+
+    &__app-heading {
+        font-weight: 400;
+        margin: 0px 0px 10px;
+    }
+
+    &__app-divider {
+        height: 2px;
+        border-radius: 5px;
+        background-color: $hardAccentGray;
+        margin: 0px 0px 8px;
+    }
+    
+    &_invisible {
+        height: 2px;
+        background-color: transparent;
+        margin: 0px 0px 8px;
+    }
+
+    &__app-sub-heading {
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: bold;
+        color: $softAccentGray;
+        margin: 10px 0px 8px 5px;
+    }
+
+    &_less-margined {
+        margin: 20px 0px 8px 5px;
+    }
+
+    &__search-input {
+        display: block;
+        width: 100%;
+        padding: 3px 10px;
+        border: 2px solid $softAccentGray;
+        border-radius: 7px;
+    }
+
+    &__search-input:focus, &__search-input:focus-visible {
+        outline: none;
+    }
+
+    &__search-input::placeholder {
+        text-transform: capitalize;
+    }
+}
+
+.tasks-ctn {
+    overflow-y: auto;
+    height: 80%;
+}
+
+.task-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3px;
+    padding-top: 10px;
+
+
+    &_less-padded {
+        padding-top: 0px;
+    }
+}
+
+
+.task {
+    display: flex;
+    align-items: center;
+    padding: 6px 8px 6px 3px;
+    justify-content: space-between;
+
+
+    &__task-check {
+        color: $backgroundBlue;
+        width: 20px;
+        height: 20px;
+    }
+
+    &__task-objective {
+        width: 85%;
+        margin-left: 8px;
+    }
+
+    &_task-done {
+        text-decoration: line-through solid $softAccentGray 1px;
+        color: $softAccentGray;
+    }
+
+    &__task-cancel {
+        transform: scale( 1.3 );
+    }
+    
+    &__task-cancel > * {
+        fill: $softAccentGray;
+        stroke: $softAccentGray;
+    }
+}
+
+
+.display-ctn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0px;
+    row-gap: 20px;
+
+
+    &__display-text {
+        width: 70%;
+        text-align: center;
+        color: $softAccentGray;
+    }
+
+    &__display-icon {
+        width: 25%;
+        height: auto;
+    }
+    
+    &__display-icon > * {
+        fill: $softAccentGray;
+        stroke: $softAccentGray;
+    }
+
+    &_display-full {
+        height: 100%;
+        width: 100%;
+    }
+    
+    &_display-half {
+        padding: 50px 0px 10px;
+    }
+}
+
+
+.add-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: $backgroundBlue;
+    color: $primaryWhite;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    text-transform: capitalize;
+    column-gap: 5px;
+}
