@@ -1,9 +1,14 @@
 import React from 'react';
 import './App.css';
-import Add__button from './Add_button/Add_button';
+
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+
+
+import Add__button from './Add_button/Add_button';
 import Display_Ctn from './Display-Ctn/Display-Ctn';
 import Task_list from './Task_List/Task_list';
+
+
 
 class App extends React.Component {
   constructor( props ) {
@@ -61,7 +66,29 @@ class App extends React.Component {
         }
       ]
     }
+
+
+    this.addTask = this.addTask.bind( this );
   }
+
+  addTask() {
+    var newTaskObjective = prompt("Enter the objective for the new task:");
+    var newTaskId = this.state.taskData.length;
+
+    var newTaskData = this.state.taskData
+    newTaskData.push(
+      {
+        id: newTaskId,
+        objective: newTaskObjective,
+        done: false
+      }
+    );
+
+    if ( newTaskObjective != "" ) {
+      this.setState( newTaskData );
+    }
+  }
+  
 
 
 
