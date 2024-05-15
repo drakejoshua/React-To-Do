@@ -1,14 +1,18 @@
+// the styles in this file are all based on the BEM( Block, Element
+// Modifier ) methodology, do take note
+
+
 // importing base styles
 @import "./base_styles";
 
 
+
+// styling the body and root element
 body {
     background-color: rgb(8, 105, 231);
     width: 100%;
     height: 100vh;
 }
-
-
 #root {
     width: 100%;
     height: 100%;
@@ -19,10 +23,10 @@ body {
 }
 
 
+// styling the app-ctn block, it's subsequent elements and modifiers
 .app-ctn {
     width: 25%;
     height: 80%;
-    margin: auto;
     background-color: $primaryWhite;
     padding: 25px 30px;
     border-radius: 20px;
@@ -57,6 +61,13 @@ body {
     &_less-margined {
         margin: 20px 0px 8px 5px;
     }
+}
+
+// styling the search-form block, it's subssequent elements and modifiers
+.search-form {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
 
     &__search-input {
         display: block;
@@ -73,13 +84,31 @@ body {
     &__search-input::placeholder {
         text-transform: capitalize;
     }
+
+    &__cancel-search-btn {
+        display: block;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        font-weight: 300;
+        cursor: pointer;
+        color: $backgroundBlue
+    }
+
+    &_btn-hidden {
+        display: none;
+    }
 }
 
+
+// styling the tasks-ctn block
 .tasks-ctn {
     overflow-y: auto;
     height: 80%;
 }
 
+// styling the app-ctn block and it's subsequent modifier
 .task-list {
     display: flex;
     flex-direction: column;
@@ -93,6 +122,7 @@ body {
 }
 
 
+// styling the task block, it's subsequent elements and modifiers
 .task {
     display: flex;
     align-items: center;
@@ -127,6 +157,7 @@ body {
 }
 
 
+// styling the display-ctn block, it's subsequent elements and modifiers
 .display-ctn {
     display: flex;
     flex-direction: column;
@@ -163,6 +194,7 @@ body {
 }
 
 
+// styling the add-button block
 .add-button {
     display: flex;
     align-items: center;

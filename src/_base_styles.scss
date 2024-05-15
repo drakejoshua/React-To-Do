@@ -1,4 +1,4 @@
-// project theme colors
+// app's theme colors
 $backgroundBlue: rgb(8, 105, 231);
 $hardAccentGray: lightgray;
 $softAccentGray: rgb(161, 161, 161);
@@ -6,7 +6,7 @@ $primaryWhite: white;
 $shadowBlack: rgba(66, 63, 63, 0.473);
 
 
-
+// general styles for all elements
 * {
     box-sizing: border-box;
     margin: 0px;

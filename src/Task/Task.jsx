@@ -15,11 +15,7 @@ class Task extends React.Component {
         return (
             <div className="task">
                 <input type="checkbox" className="task__task-check"
-                    // insert later on
-
-                    disabled={
-                        ( this.props.done ) ? "disabled" : ""
-                    }
+                    onClick={ this.props.onToggleDone }
                     
                     defaultChecked={
                         ( this.props.done ) ? "defaultChecked" : ""
@@ -35,7 +31,7 @@ class Task extends React.Component {
                 </p>
 
                 
-                <FontAwesomeIcon icon={faTimes} className="task__task-cancel"/>
+                <FontAwesomeIcon icon={faTimes} className="task__task-cancel" onClick={ this.props.onRemoveTask }/>
             </div>
         )
     }
@@ -45,6 +41,8 @@ class Task extends React.Component {
 Task.propTypes = {
     done: PropTypes.bool.isRequired,
     objective: PropTypes.string.isRequired,
+    onRemoveTask: PropTypes.func.isRequired,
+    onToggleDone: PropTypes.func.isRequired
 }
 
 
